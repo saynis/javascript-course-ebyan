@@ -151,32 +151,10 @@ let showWarning = !isRegistered || !hasPaid;
 console.log(showWarning); // true
 ```
 
----
 
 
-The **ternary operator** is a one-liner decision maker. It has three parts:
 
-```
-condition ? value_if_true : value_if_false
-```
 
-```js
-let age = 20;
-let status = age >= 18 ? "Adult" : "Minor";
-console.log(status); // Adult
-
-let score = 75;
-let grade = score >= 60 ? "Pass" : "Fail";
-console.log(grade); // Pass
-```
-
-Think of the `?` as "then" and `:` as "otherwise":
-
-> *"Is age >= 18? Then 'Adult', otherwise 'Minor'."*
-
-It's great for simple two-option situations. For more complex decisions, use `if/else` (next lesson).
-
----
 
 ## Operator Precedence — Which Runs First?
 
