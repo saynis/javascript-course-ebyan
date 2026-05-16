@@ -38,9 +38,9 @@ let cities = ["Mogadishu", "Hargeisa", "Jigjiga"]
 
 Then:
 
-- add one city to the end using `push()`
-- add one city to the beginning using `unshift()`
-- remove the last city using `pop()`
+- add one city to the end 
+- add one city to the beginning 
+- remove the last city using 
 - print the final array
 
 ---
@@ -51,8 +51,8 @@ Create an array called `languages` with at least 5 programming languages.
 
 Then:
 
-- check if `"JavaScript"` exists using `includes()`
-- find the index of `"Python"` using `indexOf()`
+- check if `"JavaScript"`
+- find the index of `"Python"` 
 - print both results
 
 ---
@@ -65,7 +65,7 @@ Create an array called `numbers` with these values:
 [10, 20, 30, 40, 50]
 ```
 
-Use a `for` loop to:
+Use a `for ...of` loop to:
 
 - print every number
 - print the total of all numbers
@@ -104,7 +104,5 @@ Use a loop to:
 
 - [ ] I used arrays correctly
 - [ ] I used array indexes
-- [ ] I used `push()`, `pop()`, and `unshift()`
-- [ ] I used `includes()` and `indexOf()`
 - [ ] I used loops with arrays
 - [ ] My code runs without errors

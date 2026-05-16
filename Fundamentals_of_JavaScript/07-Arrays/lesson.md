@@ -163,6 +163,21 @@ for (let i = 0; i < fruits.length; i++) {
 // 4. Orange
 ```
 
+### `for...of` loop — cleaner, when you don't need the index
+
+```js
+let fruits = ["Apple", "Banana", "Mango"];
+
+for (let fruit of fruits) {
+  console.log(`I love ${fruit}!`);
+}
+// I love Apple!
+// I love Banana!
+// I love Mango!
+```
+
+Use `for...of` when you just need the values. Use `for` with index when you need the position number.
+
 
 ## Key Takeaways
 
