@@ -194,3 +194,28 @@ Once you have accessed the DOM elements, you can manipulate them by changing the
   const childElement = document.getElementById("child");
   parentElement.removeChild(childElement);
   ```
+
+  ---
+
+## Key Takeaways
+
+| Task | Code |
+|------|------|
+| Select one element | `document.querySelector("selector")` |
+| Select many elements | `document.querySelectorAll("selector")` |
+| Read text | `element.textContent` |
+| Change text | `element.textContent = "new text"` |
+| Change HTML | `element.innerHTML = "<b>bold</b>"` |
+| Change style | `element.style.property = "value"` |
+| Add class | `element.classList.add("class")` |
+| Remove class | `element.classList.remove("class")` |
+| Toggle class | `element.classList.toggle("class")` |
+| Create element | `document.createElement("tag")` |
+| Append to page | `parent.appendChild(child)` |
+| Remove element | `element.remove()` |
+
+---
+
+## What's Next?
+
+You can now select and change elements. The next lesson teaches **events** — how to make your page *react* when users click, type, hover, and interact.
