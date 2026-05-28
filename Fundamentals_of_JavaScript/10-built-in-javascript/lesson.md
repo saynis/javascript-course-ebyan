@@ -1,4 +1,4 @@
-# Lesson 12 — Built-in Objects in JavaScript
+# Lesson 11 — Built-in Objects in JavaScript
 
 ## Why Built-in Objects?
 
