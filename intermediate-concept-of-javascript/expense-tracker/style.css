@@ -1,0 +1,229 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f7fafc;
+  color: #2d3748;
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+/* ─── 2. Header ─── */
+.app-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: #4299e1;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+/* ─── 3. Container — centered, max width ─── */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Reusable section titles */
+.section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a0aec0;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+/* totals */
+.totals {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.total-box {
+  flex: 1;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.total-label {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.total-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* ─── 5. Form section ─── */
+.form-section,
+.filter-section,
+.list-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.form-field {
+  margin-bottom: 14px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #4299e1;
+}
+
+/* Error styling for invalid fields */
+.form-field input.error,
+.form-field select.error {
+  border-color: #fc8181;
+}
+
+.error-message {
+  display: block;
+  font-size: 0.75rem;
+  color: #e53e3e;
+  margin-top: 4px;
+  min-height: 14px;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+
+.submit-btn:hover {
+  background: #3182ce;
+}
+
+
+
+/* ─── 6. Expense list ─── */
+.expense-list {
+  list-style: none;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f7fafc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 4px solid #4299e1;
+}
+
+
+.expense-info {
+  flex: 1;
+}
+
+.expense-description {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.expense-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #718096;
+  background: #edf2f7;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-top: 4px;
+}
+
+.expense-amount {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #fc8181;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.delete-btn:hover {
+  background: #fff5f5;
+}
+
+/* ─── 8. Empty state (no expenses yet) ─── */
+.empty-state {
+  text-align: center;
+  padding: 30px 20px;
+  color: #a0aec0;
+}
+
+.empty-state .icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.empty-state .empty-text {
+  font-size: 0.9rem;
+}
