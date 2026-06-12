@@ -147,8 +147,9 @@ function render() {
       </div>`;
   } else {
     // ── Build the list HTML from the array ──
-    expenseList.innerHTML = expenses.map((expense) =>{
-      return `
+    expenseList.innerHTML = "";
+    expenses.forEach((expense) => {
+      expenseList.innerHTML += `
         <li class="expense-item">
           <div class="expense-info">
             <p class="expense-description">${expense.description}</p>
@@ -160,7 +161,7 @@ function render() {
           </div>
         </li>
       `;
-    }).join("");  // join to make one big string
+    });
   }
 
   // ── Always update the totals ──
