@@ -92,6 +92,36 @@ Try flipping `success` to `false` and you'll see the `.catch()` run instead of t
 
 ---
 
+## Promise-Returning Functions
+
+In real code, you usually wrap a Promise inside a function so you can reuse it. The function does the slow work and hands back a Promise:
+
+```js
+function loadUser(id) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      if (id > 0) {
+        resolve({ id: id, name: "Sofia" });
+      } else {
+        reject("Invalid id: " + id);
+      }
+    }, 1000);
+  });
+}
+
+loadUser(1)
+  .then(function(user) {
+    console.log("Loaded:", user.name); // Loaded: Sofia
+  })
+  .catch(function(error) {
+    console.log("Error:", error);
+  });
+```
+
+Now `loadUser` can be called anywhere, and the caller decides what to do with the result using `.then()`.
+
+---
+
 
 
 ## Chaining: The Real Reason Promises Are Good
