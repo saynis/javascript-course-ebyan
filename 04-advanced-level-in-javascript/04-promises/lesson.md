@@ -9,9 +9,9 @@
 In the async lesson you saw callbacks, and you saw how they get messy when you stack several slow steps:
 
 ```js
-getUser(function(user) {
-  getOrders(user, function(orders) {
-    getDetails(orders, function(details) {
+getUser((user) =>{
+  getOrders(user, (orders) =>{
+    getDetails(orders, (details)=> {
       console.log(details);
     });
   });
@@ -44,11 +44,11 @@ Most of the time you don't create Promises, you *use* them. Many built-in functi
 
 ```js
 somePromise
-  .then(function(result) {
+  .then((result) =>{
     // runs if the promise SUCCEEDS
     console.log("Got it:", result);
   })
-  .catch(function(error) {
+  .catch((error)=> {
     // runs if the promise FAILS
     console.log("Something went wrong:", error);
   });
@@ -66,9 +66,9 @@ That's the core of it. One path for success, one path for failure.
 You'll mostly consume Promises, but creating one helps you see how they work. You make a Promise with `new Promise`, and you get two functions to call: `resolve` (call it on success) and `reject` (call it on failure).
 
 ```js
-const myPromise = new Promise(function(resolve, reject) {
+const myPromise = new Promise((resolve, reject)=> {
   // pretend we're loading something that takes 2 seconds
-  setTimeout(function() {
+  setTimeout(()=> {
     const success = true;
 
     if (success) {
@@ -92,35 +92,7 @@ Try flipping `success` to `false` and you'll see the `.catch()` run instead of t
 
 ---
 
-## Promise-Returning Functions
 
-In real code, you usually wrap a Promise inside a function so you can reuse it. The function does the slow work and hands back a Promise:
-
-```js
-function loadUser(id) {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      if (id > 0) {
-        resolve({ id: id, name: "Sofia" });
-      } else {
-        reject("Invalid id: " + id);
-      }
-    }, 1000);
-  });
-}
-
-loadUser(1)
-  .then(function(user) {
-    console.log("Loaded:", user.name); // Loaded: Sofia
-  })
-  .catch(function(error) {
-    console.log("Error:", error);
-  });
-```
-
-Now `loadUser` can be called anywhere, and the caller decides what to do with the result using `.then()`.
-
----
 
 ## Chaining: The Real Reason Promises Are Good
 
@@ -152,27 +124,6 @@ So Promises gave us two wins:
 
 ---
 
-## Running Tasks in Parallel: `Promise.all`
-
-Sometimes you have several slow tasks that don't depend on each other. Waiting for them one at a time wastes time. `Promise.all` runs several Promises at the same time and gives you all the results once they're all done.
-
-```js
-Promise.all([
-  loadUser(1),
-  loadUser(2),
-  loadUser(3)
-])
-  .then(function(results) {
-    console.log(results); // an array of all three users
-  })
-  .catch(function(error) {
-    console.log("One of them failed:", error);
-  });
-```
-
-If each task takes 1 second, running them one by one would take 3 seconds. With `Promise.all` they run together, so you wait about 1 second total. We'll use this more in the Fetch lesson. For now, just know it exists for when tasks can happen side by side.
-
----
 
 ## A Small but Important Rule
 
@@ -223,7 +174,6 @@ If you find yourself nesting `.then()` inside `.then()`, flatten it into a chain
 | `.then()` | Runs on success, receives the value |
 | `.catch()` | Runs on failure, receives the error |
 | Chaining `.then()` | Flat steps instead of nested callbacks |
-| `Promise.all` | Run several Promises at the same time |
 
 ---
 
