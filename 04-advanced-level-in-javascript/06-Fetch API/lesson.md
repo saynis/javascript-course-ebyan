@@ -93,35 +93,6 @@ flowchart TD
 
 ---
 
-## What is HTTPS?
-
-Most API URLs start with:
-
-```txt
-https://
-```
-
-Example:
-
-```txt
-https://jsonplaceholder.typicode.com/users
-```
-
-`HTTPS` means the browser is communicating with the server in a secure way.
-
-Simple definition:
-
-> HTTPS is the secure way your browser talks to a website or API.
-
-When we use `fetch()` with an HTTPS URL, JavaScript sends a request to that secure URL and waits for the server to send data back.
-
-You do not need to understand all the technical details right now. Just remember:
-
-```txt
-https:// = secure website or secure API URL
-```
-
----
 
 ## What are Status Codes?
 
